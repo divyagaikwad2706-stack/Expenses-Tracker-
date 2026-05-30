@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Expenses Tracker</h1>
+    <h2>colour mode <button onclick="toggleDark()">🌙</button></h2>
+    <br />
+    <h2>Add Expenses</h2>
+
+    <input id="title" placeholder="Title" />
+    <input id="amount" type="number" />
+    <input id="categoryInput" placeholder="Category" />
+    <input id="date" type="date" />
+    <button onclick="addExpense()">Add</button>
+
+    <h2>Filter</h2>
+    <input id="filterCategory" placeholder="Category" />
+    <input id="start" type="date" />
+    <input id="end" type="date" />
+    <button onclick="filterExpenses()">Filter</button>
+    <button onclick="resetFilters()">Reset</button>
+
+    <ul id="list"></ul>
+    <hr />
+    <div class="cards">
+      <div class="card">
+        <h2>Total Expense</h2>
+        <p id="totalExpense">₹0</p>
+      </div>
+
+      <div class="card">
+        <h2>Top Category</h2>
+        <p id="topCategory">-</p>
+      </div>
+
+      <div class="card">
+        <h2>Total Entries</h2>
+        <p id="totalEntries">0</p>
+      </div>
+    </div>
+    <hr />
+    <h2>Analytics</h2>
+    <div class="chart-box">
+      <canvas id="chart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <canvas id="pieChart"></canvas>
+    </div>
+    <hr />
+    <h3>
+      Next Month Expenses Predictor:
+      <button onclick="predictFromUI()">Predict</button>
+    </h3>
+
+    <h3>Export to Excel : <button onclick="exportExcel()">Export</button></h3>
+    <hr />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
